@@ -4,11 +4,12 @@ import com.shortify.Shortify_Url_Shortner.exceptions.UrlNotFoundException;
 import com.shortify.Shortify_Url_Shortner.model.ShortenedURL;
 import com.shortify.Shortify_Url_Shortner.repository.ShortenedUrlRepository;
 import org.springframework.cglib.core.Local;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
-
+@Service
 public class UrlShortenerServiceImpl implements UrlShortenerService {
     private final ShortenedUrlRepository repository;
     private String baseURL="https://shortify";
