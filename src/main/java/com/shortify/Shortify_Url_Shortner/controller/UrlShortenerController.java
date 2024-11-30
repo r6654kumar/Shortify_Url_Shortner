@@ -32,6 +32,7 @@ public class UrlShortenerController {
     public ResponseEntity<Void> redirectToOriginalURL(@RequestParam("shortURL")String shortURL){
         try{
             String originalURL= urlShortenerService.getOriginalURL(shortURL);
+//            System.out.println(originalURL);
             return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(originalURL)).build();
         }catch(UrlNotFoundException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
